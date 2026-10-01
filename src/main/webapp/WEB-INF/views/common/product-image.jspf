@@ -1,0 +1,17 @@
+<%-- Fragment dung chung (include tinh). Dau vao: bien pImages (gia tri cot Product.images) va noImg.
+     Dau ra: bien imgSrc. Quy tac giong cac trang san pham: URL http(s) giu nguyen,
+     "uploads/..." la anh upload, con lai la ten file anh mau trong /assets/images/products/ --%>
+<c:choose>
+    <c:when test="${empty pImages}">
+        <c:set var="imgSrc" value="${noImg}"/>
+    </c:when>
+    <c:when test="${fn:startsWith(pImages, 'http://') or fn:startsWith(pImages, 'https://')}">
+        <c:set var="imgSrc" value="${pImages}"/>
+    </c:when>
+    <c:when test="${fn:startsWith(pImages, 'uploads/')}">
+        <c:url var="imgSrc" value="/${pImages}"/>
+    </c:when>
+    <c:otherwise>
+        <c:url var="imgSrc" value="/assets/images/products/${pImages}"/>
+    </c:otherwise>
+</c:choose>

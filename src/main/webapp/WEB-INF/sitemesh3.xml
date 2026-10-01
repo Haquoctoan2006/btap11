@@ -1,0 +1,14 @@
+<sitemesh>
+    <!-- Decorator JSP nam trong /WEB-INF/decorators/ -->
+    <decorator-prefix>/WEB-INF/decorators/</decorator-prefix>
+
+    <!-- Vai tro ADMIN: giao dien quan tri co sidebar -->
+    <mapping path="/admin/*" decorator="admin.jsp"/>
+
+    <!-- Vai tro USER / SELLER: giao dien nguoi dung (header + footer) -->
+    <mapping path="/*" decorator="main.jsp"/>
+
+    <!-- Khong trang tri anh / file tinh -->
+    <mapping path="/image" exclude="true"/>
+    <mapping path="/assets/*" exclude="true"/>
+</sitemesh>

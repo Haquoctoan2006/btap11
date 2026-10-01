@@ -1,0 +1,32 @@
+# ---- Build ----
+target/
+*.class
+*.war
+*.jar
+
+# ---- IDE ----
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+nbproject/
+
+# ---- Log / file tam ----
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Bi mat (khong bao gio commit) ----
+.env
+*.env
+secrets.properties
+
+# ---- Anh upload luc chay (Cau 5) ----
+/uploads/
+src/main/webapp/uploads/

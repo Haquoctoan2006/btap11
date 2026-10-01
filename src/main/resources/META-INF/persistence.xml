@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+  <persistence-unit name="ShopOnlinePU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <class>vn.ute.entity.UserRole_24162130</class>
+    <class>vn.ute.entity.Seller_24162130</class>
+    <class>vn.ute.entity.Category_24162130</class>
+    <class>vn.ute.entity.User_24162130</class>
+    <class>vn.ute.entity.Product_24162130</class>
+    <class>vn.ute.entity.Cart_24162130</class>
+    <class>vn.ute.entity.CartItem_24162130</class>
+    <class>vn.ute.entity.Order_24162130</class>
+    <class>vn.ute.entity.OrderItem_24162130</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+    <properties>
+      <!-- MySQL: tai khoan root / mat khau 12345 -->
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:mysql://localhost:3306/ShopOnline?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8"/>
+      <property name="jakarta.persistence.jdbc.user" value="root"/>
+      <property name="jakarta.persistence.jdbc.password" value="12345"/>
+
+      <!-- Bang da tao san bang database/database.sql nen de none -->
+      <property name="hibernate.hbm2ddl.auto" value="none"/>
+      <property name="hibernate.show_sql" value="false"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>

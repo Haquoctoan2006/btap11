@@ -1,0 +1,9 @@
+<%-- Hien thi thong bao flash (session) roi xoa di; dung c:out de chong XSS. Can taglib core o trang goi. --%>
+<c:if test="${not empty sessionScope.flashError}">
+    <div class="alert alert-danger"><c:out value="${sessionScope.flashError}"/></div>
+    <c:remove var="flashError" scope="session"/>
+</c:if>
+<c:if test="${not empty sessionScope.flashSuccess}">
+    <div class="alert alert-success"><c:out value="${sessionScope.flashSuccess}"/></div>
+    <c:remove var="flashSuccess" scope="session"/>
+</c:if>
